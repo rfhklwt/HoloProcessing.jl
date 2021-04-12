@@ -1,0 +1,13 @@
+name = "HoloProcessing"
+uuid = "2a7007e0-cd7f-40de-83d0-bb76b7a3c669"
+authors = ["Qling <rfhklwt@163.com> and contributors"]
+version = "0.1.0"
+
+[compat]
+julia = "1"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
