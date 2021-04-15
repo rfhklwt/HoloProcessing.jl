@@ -10,6 +10,7 @@ sdm(
 
 `空域掩膜法`的算法实现，具体可见`doi: 10.1109/JDT.2015.2479646`
 
+# Arguments
 - holo: 全息图（非RGB类型而是AbstractFloat类型）
 - windows_size: 掩膜窗口大小
 - interval: 窗口偏移量
@@ -54,6 +55,7 @@ end
 
 `空域掩膜法`的核心算法，对子再现像序列进行叠加平均，并存进`sdm_img`中
 
+# Arguments
 - sdm_img: 存放结果的矩阵
 - re_tensor: 子再现像序列
 """

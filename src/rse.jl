@@ -10,6 +10,7 @@ rse(
 
 `冗余散斑降噪法`的算法实现，具体可见`doi: 10.1364/AO.390500`
 
+# Arguments
 - holo: 全息图（非RGB类型而是AbstractFloat类型）
 - windows_size: 掩膜窗口大小
 - interval: 窗口偏移量
@@ -54,6 +55,7 @@ end
 
 `冗余散斑降噪法`的核心算法，对子再现像序列进行去冗余而后叠加平均，并存进`rse_img`中
 
+# Arguments
 - rse_img: 存放结果的矩阵
 - re_tensor: 子再现像序列
 """

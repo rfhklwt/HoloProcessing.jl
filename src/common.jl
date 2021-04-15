@@ -7,17 +7,18 @@
         nums_of_holo::Tuple{Integer,Integer}
     ) -> AbstractArray{T,3} where T <: AbstractFloat
 
-该函数生成子全息图并将其存放到`tenosr`序列上
+生成子全息图并将其存放到`tenosr`序列上
 
+# Arguments
 - tensor: 子全息图序列
 - holo: 原始全息图
 - windows_size: 掩膜窗口的大小
 - interval: 窗口偏移量
 - nums_of_holo: 子全息图的数量（与`tensor`的第三个维度一致）
 
-注意：
-    - 当子全息图大小与原始全息图一致时，则对位于窗口外的地方补零
-    - 当子全息图大小与掩膜窗口大小一致时，则抛弃窗口外的数据
+# Notice
+- 当子全息图大小与原始全息图一致时，则对位于窗口外的地方补零
+- 当子全息图大小与掩膜窗口大小一致时，则抛弃窗口外的数据
 """
 function make_sub_holo!(tensor::AbstractArray{T,3}, holo::AbstractMatrix{T}, 
     windows_size::Tuple{Integer,Integer}, interval::Tuple{Integer,Integer}, 
@@ -45,16 +46,17 @@ function make_sub_holo!(tensor::AbstractArray{T,3}, holo::AbstractMatrix{T},
 end
 
 """
-reconst_tensor!(
-    re_tensor::AbstractArray{T,3}, 
-    holo_tensor::AbstractArray{T,3}, 
-    P::FFTW.FFTWPlan, 
-    scale::Integer; 
-    shift = false
-    ) -> AbstractArray{T,3} where T <: AbstractFloat
+    reconst_tensor!(
+        re_tensor::AbstractArray{T,3}, 
+        holo_tensor::AbstractArray{T,3}, 
+        P::FFTW.FFTWPlan, 
+        scale::Integer; 
+        shift = false
+        ) -> AbstractArray{T,3} where T <: AbstractFloat
 
 对子全息图序列进行数值重建并存放到`re_tensor`
 
+# Arguments
 - re_tensor: 子再现像序列
 - holo_tensor: 子全息图序列
 - P: 其类型为FFTW.FFTWPlan，表示重建采用`fft`傅立叶变换

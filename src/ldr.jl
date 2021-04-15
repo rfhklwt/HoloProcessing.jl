@@ -7,6 +7,9 @@
         scale::Integer; 
         shift = false
         ) -> AbstractMatrix{T} where T <: AbstractFloat
+`低维度重建法`的算法实现，具体可见`doi: 10.1364/AO.414773`
+
+# Arguments
 - holo: 全息图
 - N: 窗口大小的`N`倍就等于`holo`的大小
 - interval: 窗口偏移量
@@ -55,6 +58,7 @@ end
 
 `低维重建法`的核心降噪算法，对子再现像序列进行分组**平均**、**聚合**、再经过**均值滤波器**，最后结果存进`ldr_img`中
 
+# Arguments
 - ldr_img: 存放结果的矩阵
 - re_tensor: 子再现像序列
 - N: 分成`N`组
@@ -75,6 +79,7 @@ end
 
 `低维重建法`的核心降噪算法中的**降噪**步骤，对子再现像序列`re_tensor`进行分组平均，其结果放到`mean_tensor`中
 
+# Arguments
 - mean_tensor: 存放结果的矩阵
 - re_tensor: 子再现像序列
 - N: 分成`N`组
@@ -96,6 +101,7 @@ end
 
 `低维重建法`的核心降噪算法中的**聚合**步骤，将低维再现像聚合成高维再现像
 
+# Arguments
 - ldr_img: 存放结果的矩阵
 - mean_tensor: 低维再现像序列
 - N: 分成`N`组

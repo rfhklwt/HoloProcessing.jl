@@ -3,8 +3,10 @@
 
 对给定的颜色三通道`像素值`，求出其亮度并以浮点数的形式输出
 
-注意: 由于实验中记录的全息图都是灰度图像，其三个通道分量颜色都是一致的，故取某一颜色分量作为其亮度即可
+# Notice
+由于实验中记录的全息图都是灰度图像，其三个通道分量颜色都是一致的，故取某一颜色分量作为其亮度即可
 
+# Arguments
 - c: RGB类型的像素值
 """
 brightness(c::AbstractRGB) = c.r |> Float64
@@ -14,7 +16,8 @@ brightness(c::AbstractRGB) = c.r |> Float64
 
 对给定的颜色三通道`图像`，求出其亮度并以`浮点数`的形式输出
 
-注意: 由于实验中记录的全息图都是灰度图像，其三个通道分量颜色都是一致的，故取某一颜色分量作为其亮度即可
+# Notice
+由于实验中记录的全息图都是灰度图像，其三个通道分量颜色都是一致的，故取某一颜色分量作为其亮度即可
 """
 brightness(img::AbstractMatrix{<:AbstractRGB}) = brightness.(img)
 
@@ -23,6 +26,7 @@ brightness(img::AbstractMatrix{<:AbstractRGB}) = brightness.(img)
 
 给定`图像`路径以及`图像`的名称(包括后缀)，实现对全息图的载入
 
+# Arguments
 - `PATH`: `图像`所在路径
 - `name`: `图像`的名称，比如`tail.bmp`
 - `convert`: 可选参数，默认值是`true`。当为`true`时，该函数返回`图像`的灰度值浮点数矩阵；当为`false`时，该函数直接返回图像
@@ -78,9 +82,12 @@ end
 
 对矩阵`x`进行归一化，并返回归一化后的矩阵
 
+# Arguments
 - `x`: 矩阵
 - `nthreads`: 决定是否开多线程来进行归一化，默认为否
-注意：对于不大的矩阵（低于10_000 × 10_000），不建议开多线程，这是因为多线程会有额外的内存和时间开销
+
+# Notice
+对于不大的矩阵（低于10_000 × 10_000），不建议开多线程，这是因为多线程会有额外的内存和时间开销
 """
 normalize(x::AbstractMatrix; nthreads = false) =
     nthreads ? _normalize_threads(x) : _normalize(x)
@@ -90,10 +97,13 @@ normalize(x::AbstractMatrix; nthreads = false) =
 
 对矩阵`x`进行`原地`归一化，即原地修改矩阵并返回修改后的`x`
 
+# Arguments
 - `x`: 矩阵
 - `x`: 矩阵
 - `nthreads`: 决定是否开多线程来进行归一化，默认为否
-注意：对于不大的矩阵（低于10_000 × 10_000），不建议开多线程，这是因为多线程会有额外的内存和时间开销
+
+# Notice
+对于不大的矩阵（低于10_000 × 10_000），不建议开多线程，这是因为多线程会有额外的内存和时间开销
 """
 normalize!(x::AbstractMatrix; nthreads = false) =
     nthreads ? _normalize_threads!(x) : _normalize!(x)
@@ -101,6 +111,8 @@ normalize!(x::AbstractMatrix; nthreads = false) =
 """
     color(x::AbstractMatrix{<:AbstractFloat}) -> AbstractMatrix
 将浮点数类型矩阵转换为灰度图像
+
+# Arguments
 - x: 浮点数矩阵
 """
 color(x::AbstractMatrix{<:AbstractFloat}) = Gray.(x)
@@ -109,7 +121,7 @@ color(x::AbstractMatrix{<:AbstractFloat}) = Gray.(x)
     reconst(holo::AbstractMatrix, P::FFTW.FFTWPlan, scale::Integer; shift=false) -> AbstractMatrix
 对无透镜傅立叶全息图进行数值重建
 
-其中
+# Arguments
 - `holo`: 无透镜傅立叶全息图
 - `P`: 其类型为FFTW.FFTWPlan，表示重建采用`fft`傅立叶变换
 - `scale`: 由于零级像强度过大，故需要用`scale`拉升±1级像的强度

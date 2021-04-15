@@ -10,6 +10,7 @@ contrast(img::AbstractMatrix) = std(img) / mean(img)
 
 计算图像`img`的SSI值
 
+# Arguments
 - `noised`: 噪声图像
 - `filtered`: 降噪后的图像
 """
@@ -20,6 +21,7 @@ ssi(; noised::AbstractMatrix{T}, filtered::AbstractMatrix{T}) where T = contrast
 
 计算图像`img`的SMPI值
 
+# Arguments
 - `noised`: 噪声图像
 - `filtered`: 降噪后的图像
 """
