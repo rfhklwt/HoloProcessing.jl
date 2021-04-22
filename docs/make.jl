@@ -43,7 +43,4 @@ makedocs(
     pages     = PAGES,
 )
 
-deploydocs(
-    repo = "github.com/rfhklwt/HoloProcessing.jl.git",
-    branch = render_pdf ? "pdf" : "gh-pages"
-)
+deploydocs(repo = "github.com/rfhklwt/HoloProcessing.jl.git")
