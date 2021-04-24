@@ -1,5 +1,7 @@
 # HoloProcessing 中文文档
 
+欢迎来到 HoloProcessing 中文文档([PDF版本](https://github.com/rfhklwt/HoloProcessing.jl/raw/pdf/dev/HoloProcessing%E4%B8%AD%E6%96%87%E6%96%87%E6%A1%A3.pdf))!
+
 ## Package Features
 
 该包主要分三大模块：
