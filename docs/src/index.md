@@ -1,4 +1,4 @@
-# HoloProcessing.jl
+# HoloProcessing 中文文档
 
 ## Package Features
 
@@ -22,10 +22,10 @@
 
 ```@contents
 Pages = [
-    "man/processing.md",
-    "man/denoising.md",
-    "man/evaluating.md",
+    "manual/processing.md",
+    "manual/denoising.md",
+    "manual/evaluating.md",
+    "manual/function.md",
 ]
 Depth = 1
 ```
-
