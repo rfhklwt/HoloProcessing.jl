@@ -1,5 +1,5 @@
 # HoloProcessing
-
+![](HoloProcessing.svg)
 [![Documentation][docs-dev-img]][docs-dev-url]
 [![Run Test][action-img]][action-url]
 [![Code Style: Blue][blue-img]][blue-url]
